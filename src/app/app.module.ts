@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, inject } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -16,6 +16,8 @@ import { ActivatedRoute } from '@angular/router';
 import { routes } from './forms/sports/sports.routes';
 import { StudentComponent } from './components/student/student.component';
 
+import {HttpClient, HttpClientModule} from '@angular/common/http'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +33,8 @@ import { StudentComponent } from './components/student/student.component';
     MatInputModule,
     MatButtonModule,
     HeaderComponent,
-    RouterModule
+    RouterModule,
+    HttpClientModule
   ],
   providers: [
     provideRouter(routes),
@@ -39,5 +42,7 @@ import { StudentComponent } from './components/student/student.component';
   bootstrap: [AppComponent]
 })
 export class AppModule {
+
+ 
  
 }
